@@ -38,7 +38,14 @@
         }
         .center {
             width: 60%;
-            margin: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        button{
+            margin:auto;
+            display:block;
+            position: relative;
         }
         body {
             overflow: hidden;
@@ -70,8 +77,8 @@
 <body style="background-color:white;width:100%;">
         <main class="mdl-layout__content">
             <div class="page-content; width:100%">
-                <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
-                    Button
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="width: 300px; height: 50px;background-color: gray; margin-top:200px;">
+                    <i class="fa fa-lock"></i>  일반로그인
                 </button>
             </div>
         </main>
