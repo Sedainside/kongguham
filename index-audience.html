@@ -47,6 +47,13 @@
             background: #fafafa;
             position: relative;
         }
+        div,main,html {
+            height: 100%;
+        }
+        #map {
+        height: 600px;
+        width: 100%;
+        }
         @-webkit-keyframes animatebottom {
             from { bottom:-100px; opacity:0 }
             to { bottom:0px; opacity:1 }
@@ -66,7 +73,7 @@
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
         <header class="mdl-layout__header" style="background-color:#4169e1">        
             <div class="mdl-layout__header-row" style="background-color:#4169e1">
-                <span class="mdl-layout-title">공구함</span>
+                <span class="mdl-layout-title"></span>
             </div>
         </header>
         <div class="mdl-layout__drawer">
@@ -80,8 +87,8 @@
                 </nav>
             </div>
         <main class="mdl-layout__content">
-            <div class="page-content; width:100%">
-
+            <div class="page-content; " onload="initMap()" style="width:100%;height:100%">
+                <div id="map_canvas" style="width:100%;height:100%;"></div>
             </div>
         </main>
     </div>
@@ -89,6 +96,21 @@
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="jquery-ui.min.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPtsaiJaA3bjxSemXNW5gJkPfiY0cE9Js&callback=initMap"></script>
+    <script>
+    function initMap() {
+        var hdst = {lat: 37.558309, lng: 126.925512};
+        var map = new google.maps.Map(document.getElementById('map_canvas'), {
+          zoom: 16,
+          center: hdst,
+          zoomControl: false,
+          scaleControl: true,
+          mapTypeControl:false,
+          overviewMapcontroll:false
+        });
+        var marker = new google.maps.Marker({position: hdst, map: map});
+      }
+    </script>
     <script>
         window.onload = function(){
             var h = window.innerHeight;
