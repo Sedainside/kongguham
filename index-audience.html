@@ -47,6 +47,12 @@
             background: #fafafa;
             position: relative;
         }
+        .center{
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+            text-align: center;
+        }
         div,main,html {
             height: 100%;
         }
@@ -89,13 +95,28 @@
             <!-- <span class="mdl-layout-title"></span> -->
             </div>
             <div class="mdl-layout__tab-bar mdl-js-ripple-effect" style="background-color:white; border-radius: 10px">
-                <a href="#fixed-tab-1" class="mdl-layout__tab is-active" style="color:#292929">공연장</a>
-                <a href="#fixed-tab-2" class="mdl-layout__tab" style="color:#292929">Tab 2</a>
-                <a href="#fixed-tab-3" class="mdl-layout__tab" style="color:#292929">Tab 3</a>
+                <a href="#fixed-tab-1" class="mdl-layout__tab is-active" style="color:#292929">지도</a>
+                <a href="#fixed-tab-2" class="mdl-layout__tab" style="color:#292929">추천</a>
+                <a href="#fixed-tab-3" class="mdl-layout__tab" style="color:#292929">검색</a>
             </div>
         </header>
         <div class="mdl-layout__drawer">
-            <span class="mdl-layout-title">Title</span>
+                <br>
+            <span class="mdl-layout-title" style="color:#1a1a1a">메뉴</span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href=" https://sedainside.github.io/kongguham " style="font-size:15px;"><i class="fa fa-home" style="margin-right:10px; font-size:15px;"></i>홈</a>
+                    <hr style="margin:0">
+                <a class="mdl-navigation__link" href=" https://sedainside.github.io/kongguham " style="font-size:15px;"><i class="fa fa-user" style="margin-right:10px; font-size:15px;"></i>내 프로필</a>
+                    <hr style="margin:0">
+                <a class="mdl-navigation__link" href=" https://sedainside.github.io/kongguham " style="font-size:15px;"><i class="fa fa-ticket" style="margin-right:10px; font-size:15px"></i>관람내역</a>
+                    <hr style="margin:0">
+                <a class="mdl-navigation__link" href=" https://sedainside.github.io/kongguham " style="font-size:15px;"><i class="fa fa-star" style="margin-right:10px; font-size:15px"></i>즐겨찾기</a>
+                    <hr style="margin:0">    
+                <a class="mdl-navigation__link" href=" https://sedainside.github.io/kongguham " style="font-size:15px;"><i class="fa fa-code" style="margin-right:10px; font-size:15px"></i>앱 정보</a>
+                    <hr style="margin:0">
+                <a class="mdl-navigation__link" href=" https://sedainside.github.io/kongguham " style="font-size:15px;"><i class="fa fa-gear" style="margin-right:10px; font-size:15px"></i>설정</a>
+                    <hr style="margin:0">
+            </nav>
         </div>
         <main class="mdl-layout__content" style="width:100%;height:100%">
             <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1" style="width:100%;height:100%">
@@ -104,7 +125,45 @@
                 </div>
             </section>
             <section class="mdl-layout__tab-panel" id="fixed-tab-2">
-                <div class="page-content"><!-- Your content goes here --></div>
+                <div class="page-content">
+                    <br>
+                    <table class="mdl-data-table mdl-js-data-table mdl-data-table; center" style="width:90%;">
+                        <thead>
+                            <tr>
+                            <th class="mdl-data-table__cell--non-numeric">공연 정보</th>
+                            <th>장소</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">함께 걸어요 콘서트 (ㅇㅇ밴드)</td>
+                                    <td>상상 아트홀</td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">손을 잡아주세요 콘서트 (XX레이블)</td>
+                                    <td>KTnG</td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">Laminate (Gold on Blue)</td>
+                                    <td>10</td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">Acrylic (Transparent)</td>
+                                    <td>25</td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">Plywood (Birch)</td>
+                                    <td>50</td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">Laminate (Gold on Blue)</td>
+                                    <td>10</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <hr>
+
+                </div>
             </section>
             <section class="mdl-layout__tab-panel" id="fixed-tab-3">
                 <div class="page-content"><!-- Your content goes here --></div>
