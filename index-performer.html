@@ -56,6 +56,15 @@
         div,main,html {
             height: 100%;
         }
+        .demo-card-square.mdl-card {
+          width: 90%;
+          height: 5%;
+        }
+        .demo-card-square > .mdl-card__title {
+          color: #fff;
+          background:
+            url('../assets/demos/dog.png') bottom right 15% no-repeat #46B6AC;
+        }
         #map_canvas{
             width: 100%;
             height: 100%;
@@ -72,6 +81,15 @@
             border-radius: 5px;
             min-height: 10px;
             display: none;
+        }
+        #overlay {
+            position: fixed; /* Sit on top of the page content * /* Hidden by default */
+            left: 0;
+            right: 0;
+            bottom: 10px;
+            background-color:white;/* Black background with opacity */
+            z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+            cursor: pointer; /* Add a pointer on hover */
         }
         @-webkit-keyframes animatebottom {
             from { bottom:-100px; opacity:0 }
@@ -111,13 +129,22 @@
                     <hr style="margin:0">
                 <a class="mdl-navigation__link" href=" https://sedainside.github.io/kongguham " style="font-size:15px;"><i class="fa fa-code" style="margin-right:10px; font-size:15px"></i>앱 정보</a>
                     <hr style="margin:0">
-                <a class="mdl-navigation__link" href=" https://sedainside.github.io/kongguham " style="font-size:15px;"><i class="fa fa-gear" style="margin-right:10px; font-size:15px"></i>설정</a>
-                    <hr style="margin:0">
+                <!-- <a class="mdl-navigation__link" href=" https://sedainside.github.io/kongguham " style="font-size:15px;"><i class="fa fa-gear" style="margin-right:10px; font-size:15px"></i>설정</a> -->
+                    <!-- <hr style="margin:0"> -->
             </nav>
         </div>
         <main class="mdl-layout__content" style="width:100%;height:100%">
             <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1" style="width:100%;height:100%">
                 <div class="page-content" onload="initMap()" style="width:100%;height:100%">
+                    <div id="overlay" class="demo-card-square mdl-card mdl-shadow--2dp; center" style=" vertical-align: bottom; border-radius: 15px">
+                    <div class="mdl-card__title mdl-card--expand">
+                        <h2 class="mdl-card__title-text">홍대 공연장</h2>
+                    </div>
+                        <div class="mdl-card__supporting-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Aenan convallis.
+                        </div>
+                    </div>
                     <div id="map_canvas" style="width:100%;height:100%; position: fixed;"></div>
                 </div>
             </section>
@@ -149,7 +176,14 @@
                 </div>
             </section>
             <section class="mdl-layout__tab-panel" id="fixed-tab-3">
-                <div class="page-content"><!-- Your content goes here --></div>
+                <div class="page-content">
+                    <form action="#" class="center">
+                    <div class="mdl-textfield mdl-js-textfield">
+                        <input class="mdl-textfield__input" type="text" id="sample1">
+                        <label class="mdl-textfield__label" for="sample1">예) 홍대 힙합 공연장</label>
+                    </div>
+                    </form>
+                </div>
             </section>
         </main>
         </div> 
