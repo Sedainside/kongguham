@@ -125,6 +125,19 @@
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="jquery-ui.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyAv3aQaHNMQ167ooZRIYJJRxGuxllsnGJY",
+        authDomain: "kongguham.firebaseapp.com",
+        databaseURL: "https://kongguham.firebaseio.com",
+        projectId: "kongguham",
+        storageBucket: "kongguham.appspot.com",
+        messagingSenderId: "689256765102"
+    };
+    firebase.initializeApp(config);
+    </script>
     <script>
         window.onload = function(){
             var h = window.innerHeight;

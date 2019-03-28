@@ -59,13 +59,10 @@
             margin-left: auto;
             text-align: center;
         }
-        div,main,html {
-            height: 100%;
-        }
         #map_canvas{
             width: 100%;
             height: 100%;
-            position: fixed;
+            position: inherit;
             z-index: 0;
         }
         #searchbox {
@@ -88,14 +85,8 @@
             z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
             cursor: pointer; /* Add a pointer on hover */
         }
-        .demo-card-square.mdl-card {
-          width: 90%;
-          height: 5%;
-        }
-        .demo-card-square > .mdl-card__title {
-          color: #fff;
-          background:
-            url('../assets/demos/dog.png') bottom right 15% no-repeat #46B6AC;
+        ::content{
+            z-index: 2;
         }
         @-webkit-keyframes animatebottom {
             from { bottom:-100px; opacity:0 }
@@ -143,19 +134,23 @@
             </nav>
         </div>
         <main class="mdl-layout__content" style="width:100%;height:100%">
-            <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1" style="width:100%;height:100%">
-                <div class="page-content" onload="initMap()" style="width:100%;height:100%">
-                    <div id="overlay" class="demo-card-square mdl-card mdl-shadow--2dp; center" style=" vertical-align: bottom; border-radius: 15px">
-                    <div class="mdl-card__title mdl-card--expand">
-                        <h2 class="mdl-card__title-text">홍대 공연장</h2>
-                    </div>
-                    <div class="mdl-card__supporting-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Aenan convallis.
-                    </div>
-                    </div>
-                    <div id="map_canvas" style="width:100%;height:100%; position: fixed;">
-                    </div>
+            <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1"onload="initMap()" style="width:100%;height:100%">
+                <div class="page-content"  style="width:100%;height:100%">
+                    <div id="map_canvas" style="width:100%;height:100%; margin-bottom: 0"></div>
+                    <footer class="mdl-mini-footer center" id="overlay" style="width:80%; height: 10%; margin-bottom: 5%; border-radius: 20px;">
+                        <div class="mdl-mini-footer__left-section">
+                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1">
+                                <input type="checkbox" id="checkbox-1" class="mdl-checkbox__input" checked>
+                                <span class="mdl-checkbox__label">Checkbox</span>
+                            </label>           
+                        </div>
+                        <div class="mdl-mini-footer__left-section">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-2">
+                                    <input type="checkbox" id="checkbox-2" class="mdl-checkbox__input" checked>
+                                    <span class="mdl-checkbox__label">Checkbox</span>
+                                </label>           
+                            </div>
+                    </footer>
                 </div>
             </section>
             <section class="mdl-layout__tab-panel" id="fixed-tab-2">
@@ -197,10 +192,22 @@
             </section>
         </main>
         </div> 
-
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="jquery-ui.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyAv3aQaHNMQ167ooZRIYJJRxGuxllsnGJY",
+        authDomain: "kongguham.firebaseapp.com",
+        databaseURL: "https://kongguham.firebaseio.com",
+        projectId: "kongguham",
+        storageBucket: "kongguham.appspot.com",
+        messagingSenderId: "689256765102"
+    };
+    firebase.initializeApp(config);
+    </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPtsaiJaA3bjxSemXNW5gJkPfiY0cE9Js&callback=initMap"></script>
     <script>
     function initMap() {
@@ -216,10 +223,42 @@
           fullscreenControl:false
         });
         var marker = new google.maps.Marker({position: hdst, map: map});
+        var contentString = "홍대입구역입니다"
         var infowindow = new google.maps.InfoWindow({
-         content:"Hello World!"
+          content: contentString,
         });
-        infowindow.open(map,marker);
+        var marker = new google.maps.Marker({position: hdst, 
+        map: map,
+        title: '홍대입구'
+        });
+        marker.addListener('click', function() {
+          infowindow.open(map, marker);
+        });
+      }
+      infoWindow = new google.maps.InfoWindow;
+      if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('Location found.');
+            infoWindow.open(map);
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
+      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+        infoWindow.open(map);
       }
     </script>
     <script>
