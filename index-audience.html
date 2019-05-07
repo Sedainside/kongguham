@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, width=device-width, user-scalable=no"/> 
@@ -8,7 +8,7 @@
         <link rel="shortcut icon" href="/images/seda.png">
         <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.pink-indigo.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:300" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=nanum" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="jquery-ui.min.css">
     <style>
@@ -117,16 +117,13 @@
         </header>
         <div class="mdl-layout__drawer">
                 <br>
-            <span class="mdl-layout-title" style="color:#1a1a1a">메뉴</span>
+            <span class="mdl-layout-title" style="color:gray">메뉴</span>
             <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" href="profile-audience.html" style="font-size:15px;"><i class="fa fa-user" style="margin-right:10px; font-size:15px;"></i>내 프로필</a>
-                    <hr style="margin:0">
-                <a class="mdl-navigation__link" href=" https://sedainside.github.io/kongguham " style="font-size:15px;"><i class="fa fa-ticket" style="margin-right:10px; font-size:15px"></i>관람내역</a>
-                    <hr style="margin:0">
-                <a class="mdl-navigation__link" href=" https://sedainside.github.io/kongguham " style="font-size:15px;"><i class="fa fa-star" style="margin-right:10px; font-size:15px"></i>즐겨찾기</a>
+                <a class="mdl-navigation__link" href="profile-audience.html" style="font-size:15px; color: black"><i class="fa fa-user" style="margin-right:10px; font-size:15px; color: black"></i>내 프로필</a>
+                <a class="mdl-navigation__link" href=" https://sedainside.github.io/kongguham " style="font-size:15px; color: black"><i class="fa fa-ticket" style="margin-right:10px; font-size:15px; color: black"></i>관람내역</a>
+                <a class="mdl-navigation__link" href=" https://sedainside.github.io/kongguham " style="font-size:15px; color: black"><i class="fa fa-star" style="margin-right:10px; font-size:15px; color: black;"></i>즐겨찾기</a>
                     <hr style="margin:0">    
-                <a class="mdl-navigation__link" href=" appinfo.html " style="font-size:15px;"><i class="fa fa-code" style="margin-right:10px; font-size:15px"></i>앱 정보</a>
-                    <hr style="margin:0">
+                <a class="mdl-navigation__link" href=" appinfo.html " style="font-size:15px; color: black"><i class="fa fa-code" style="margin-right:10px; font-size:15px; color: black "></i>앱 정보</a>
                 <!-- <a class="mdl-navigation__link" href=" https://sedainside.github.io/kongguham/setting-audience.html " style="font-size:15px;"><i class="fa fa-gear" style="margin-right:10px; font-size:15px"></i>설정</a> -->
                     <!-- <hr style="margin:0"> -->
             </nav>
@@ -215,10 +212,7 @@
         var infowindow = new google.maps.InfoWindow({
           content: contentString,
         });
-        var marker = new google.maps.Marker({position: hdst, 
-        map: map,
-        title: '홍대입구'
-        });
+        var marker = new google.maps.Marker({position: hdst, map: map,title: '홍대입구'});
         marker.addListener('click', function() {
           infowindow.open(map, marker);
         });

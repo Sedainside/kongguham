@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, width=device-width, user-scalable=no"/> 
@@ -8,12 +8,12 @@
         <link rel="shortcut icon" href="/images/seda.png">
         <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.pink-indigo.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:300" rel="stylesheet">
+        <link href="http://fonts.googleapis.com/earlyaccess/jejugothic.css" rel="stylesheet">        
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="jquery-ui.min.css">
     <style>
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Montserrat', sans-serif;
+        h1, h2, h3, h4, h5, h6, b {
+            font-family: 'jejugothicgothic', sans-serif;
         }
         ::-webkit-scrollbar {
             display: none;
@@ -91,13 +91,26 @@
                         <!-- <hr style="margin:0"> -->
                 </nav>
             </div>
-            <main class="mdl-layout__content">
-                <div class="page-content">
+            <main class="mdl-layout__content" style=" width: 100%">
+                <div class="page-content" style="width:100%">
                     <br>
-                    <div class="mdl-grid">
-                        <div class="mdl-cell mdl-cell--4-col">
-                            <i class="fa fa-user-circle" style="color:gray; font-size: 50px;"></i>
+                    <div class="mdl-grid" style="padding:0;width: 100%">
+                        <div class="mdl-cell mdl-cell--4-col" style="margin:0; background-color:white; width: 100%">
+                            <div class="mdl-cell mdl-cell--1-col" style="float:left;margin-left: 7.5%">
+                                <i class="fa fa-user-circle" style="color:gray; font-size: 75px;"></i>
+                            </div>
+                            <div class="mdl-cell mdl-cell--1-col" style="float:left; text-align: center">
+                                <b>27</b>
+                            </div>
                         </div>
+                    </div>
+                    <br>
+                    <hr>
+                    <div class="mdl-cell mdl-cell--4-col" style="background-color:white; width: 100%">
+                        <i class="material-icons" style="margin-left: 3%; margin-right:3%; font-size: 23px; vertical-align:middle">my_location</i><b style=" font-size:17px; vertical-align: middle">선호지역</b>
+                    </div>
+                    <div class="mdl-cell mdl-cell--4-col" style="background-color:white; width: 100%">
+                        <i class="material-icons" style="margin-left: 3%; margin-right:3%; font-size: 23px; vertical-align:middle">my_location</i><b style=" font-size:17px; vertical-align: middle">선호지역</b>
                     </div>
                 </div>
             </main>
